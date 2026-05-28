@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/tmz_kickoff_checklist.html" }
+  ]
+}
