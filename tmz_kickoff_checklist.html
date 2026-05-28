@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>tmz ブランドサイト — キックオフ・チェックリスト</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Shippori+Mincho:wght@400;500;600&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  :root{
+    --paper:#F1E9DA; --paper2:#FBF6EC; --ink:#3A3A3A; --rust:#9B4A3A; --sand:#C9BDA6;
+    --gold:#A88A52; --taupe:#8A7C66; --ink2:#6E6357; --line:rgba(58,58,58,.15);
+    --serif:'Cormorant Garamond',Georgia,'Shippori Mincho',serif;
+    --mincho:'Shippori Mincho','Hiragino Mincho ProN','Yu Mincho',serif;
+    --sans:'Zen Kaku Gothic New','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
+  }
+  html{scroll-behavior:smooth}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);
+    font-size:16px;line-height:1.75;font-weight:400;position:relative;
+    -webkit-font-smoothing:antialiased;overflow-x:hidden}
+  body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;
+    mix-blend-mode:multiply;
+    background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+  .topbar{position:sticky;top:0;z-index:10;background:rgba(241,233,218,.92);
+    backdrop-filter:saturate(120%) blur(6px);-webkit-backdrop-filter:saturate(120%) blur(6px);
+    border-bottom:.5px solid var(--line)}
+  .topbar-in{max-width:680px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;
+    justify-content:space-between;gap:12px;flex-wrap:wrap}
+  .brand{font-family:var(--serif);font-size:18px;letter-spacing:.01em;white-space:nowrap}
+  .brand i{color:var(--rust);font-style:italic}
+  .nav{display:flex;gap:8px}
+  .chip{font-size:12px;letter-spacing:.04em;color:var(--ink2);text-decoration:none;
+    border:.5px solid var(--sand);border-radius:999px;padding:6px 12px;background:var(--paper2);
+    min-height:32px;display:inline-flex;align-items:center;transition:.2s}
+  .chip:active,.chip:hover{color:var(--rust);border-color:var(--rust)}
+  .wrap{max-width:680px;margin:0 auto;padding:0 20px 64px;position:relative;z-index:1}
+  .hero{padding:40px 0 8px}
+  .kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--taupe)}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(40px,11vw,60px);line-height:1.02;margin:10px 0 0}
+  .hero-jp{font-family:var(--mincho);font-size:clamp(15px,4.4vw,18px);color:var(--ink2);margin-top:12px}
+  .lead{font-size:14.5px;color:var(--ink2);line-height:1.85;margin-top:18px;
+    border-top:.5px solid var(--line);padding-top:18px}
+  .part{margin-top:44px}
+  .part-head{display:flex;align-items:baseline;gap:12px;border-top:1.5px solid var(--rust);
+    padding-top:14px;margin-bottom:18px}
+  .part-no{font-family:var(--serif);font-size:30px;color:var(--rust);line-height:1}
+  .part-title{font-family:var(--mincho);font-weight:500;font-size:18px}
+  .progress{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ink2);
+    background:var(--paper2);border:.5px solid var(--line);border-radius:999px;padding:6px 14px;margin-bottom:18px}
+  .progress b{font-family:var(--serif);font-size:17px;color:var(--rust);font-weight:500}
+  .card{background:var(--paper2);border:.5px solid var(--line);border-radius:14px;
+    padding:18px 18px 8px;margin-bottom:16px;box-shadow:0 1px 2px rgba(58,58,58,.04);
+    opacity:0;transform:translateY(10px);animation:rise .6s ease forwards}
+  @keyframes rise{to{opacity:1;transform:none}}
+  .sub-title{font-size:15.5px;font-weight:500;display:flex;align-items:baseline;gap:10px;
+    padding-bottom:6px}
+  .sub-title .ltr{font-family:var(--serif);font-size:22px;color:var(--rust);line-height:1}
+  .tag{font-size:10.5px;letter-spacing:.06em;color:var(--taupe);border:.5px solid var(--sand);
+    border-radius:999px;padding:2px 8px;margin-left:auto;white-space:nowrap}
+  .tag.warn{color:var(--rust);border-color:var(--rust)}
+  .swatches{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0 12px}
+  .sw{display:flex;align-items:center;gap:6px;font-size:11px;color:var(--ink2)}
+  .sw i{width:16px;height:16px;border-radius:5px;border:.5px solid rgba(58,58,58,.18);display:inline-block}
+  .checks{list-style:none}
+  .check{display:flex;gap:12px;align-items:flex-start;padding:11px 0;min-height:46px;
+    border-top:.5px solid var(--line);cursor:pointer}
+  .card .checks .check:first-child{border-top:none}
+  .box{flex:0 0 auto;width:22px;height:22px;border-radius:6px;border:1.5px solid var(--sand);
+    margin-top:2px;display:grid;place-items:center;transition:.18s;background:#fff}
+  .box svg{width:13px;height:13px;opacity:0;transform:scale(.6);transition:.18s}
+  .check .label{font-size:14.5px;line-height:1.6;transition:.18s}
+  .check .label b{font-weight:500}
+  .check.done .box{background:var(--rust);border-color:var(--rust)}
+  .check.done .box svg{opacity:1;transform:none}
+  .check.done .label{color:var(--taupe);text-decoration:line-through;text-decoration-color:var(--sand)}
+  .hex{font-family:var(--mincho);overflow-wrap:anywhere}
+  .steps{list-style:none;margin-top:4px}
+  .phase{font-family:var(--mincho);font-weight:500;font-size:15px;margin:10px 0 4px}
+  .steps li{position:relative;padding:6px 0 6px 18px;font-size:14px;line-height:1.6;color:var(--ink)}
+  .steps li::before{content:"";position:absolute;left:0;top:14px;width:8px;height:1.5px;background:var(--sand)}
+  .note p{font-size:14px;line-height:1.8;margin-bottom:10px}
+  .note .steps li{color:var(--ink2)}
+  footer{max-width:680px;margin:0 auto;padding:28px 20px 48px;border-top:.5px solid var(--line);
+    position:relative;z-index:1;display:flex;justify-content:space-between;align-items:baseline;
+    gap:12px;flex-wrap:wrap}
+  footer .f-brand{font-family:var(--serif);font-size:15px}
+  footer .f-meta{font-size:11px;letter-spacing:.04em;color:var(--taupe)}
+  @media (prefers-reduced-motion:reduce){.card{animation:none;opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-in">
+      <span class="brand">Kickoff <i>checklist</i></span>
+      <nav class="nav">
+        <a class="chip" href="#part1">素材</a>
+        <a class="chip" href="#part2">進め方</a>
+        <a class="chip" href="#part3">コピー</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="hero">
+      <div class="kicker">tmz brand site</div>
+      <h1>Kickoff<br>checklist</h1>
+      <div class="hero-jp">キックオフ・チェックリスト</div>
+      <p class="lead">着手にあたっての準備資料です。Part 1（素材のご提供依頼）は御社へ共有する想定、Part 2（制作の進め方）は当方の作業順序、Part 3 は英文コピー管理表（別添 Excel）についての案内です。各項目はタップでチェックできます。</p>
+    </section>
+
+    <section class="part" id="part1">
+      <div class="part-head"><span class="part-no">01</span><span class="part-title">ご提供いただくもの（素材インテイク）</span></div>
+      <div class="progress"><b id="done">0</b><span>/ <span id="total">0</span> 項目 揃いました</span></div>
+
+      <div class="card">
+        <div class="sub-title"><span class="ltr">A</span>ブランド／デザイン</div>
+        <div class="swatches">
+          <span class="sw"><i style="background:#3A3A3A"></i>墨</span>
+          <span class="sw"><i style="background:#F1E9DA"></i>素白</span>
+          <span class="sw"><i style="background:#9B4A3A"></i>錆朱</span>
+          <span class="sw"><i style="background:#C9BDA6"></i>砂</span>
+          <span class="sw"><i style="background:#A88A52"></i>金</span>
+        </div>
+        <ul class="checks">
+          <li class="check"><span class="box">&check;</span><span class="label"><b>ロゴ一式</b>：AI または SVG（ベクター）、PNG（透過／横組・縦組・モノクロ版）。最小使用サイズ・余白規定があれば併せて</span></li>
+          <li class="check"><span class="box">&check;</span><span class="label"><b>確定カラーパレット</b>：<span class="hex">HEX／CMYK（墨・素白・錆朱・砂・金／上記5色）</span></span></li>
+          <li class="check"><span class="box">&check;</span><span class="label">指定フォント（欧文・和文）があれば。なければ提案ベース（高コントラスト・セリフ＋明朝）で進行</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="sub-title"><span class="ltr">B</span>商品（初期20点）</div>
+        <ul class="checks">
+          <li class="check"><span class="box">&check;</span><span class="label"><b>商品写真</b>：高解像度、できれば背景・ライティング統一（1商品あたり複数カット歓迎）</span></li>
+          <li class="check"><span class="box">&check;</span><span class="label"><b>各商品データ</b>：商品名（EN/JP）／価格（THB 等）／寸法・容量／素材区分／器種カテゴリ／サイズ／季節タグ／作家の紐付け／在庫数（一点もの＝1）／SKU（あれば）</span></li>
+          <li class="check"><span class="box">&check;</span><span class="label">6月の追加10点も同形式で（撮影後）</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="sub-title"><span class="ltr">C</span>商品分類<span class="tag">ご連携済</span></div>
+        <ul class="checks">
+          <li class="check"><span class="box">&check;</span><span class="label">器種：平皿・椀・箸置き・花瓶・茶器（急須・グラス）・抹茶碗・その他</span></li>
+          <li class="check"><span class="box">&check;</span><span class="label">素材：陶器・磁器・ガラス食器・その他　／　サイズ：大・中・小 など</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="sub-title"><span class="ltr">D</span>作家</div>
+        <ul class="checks">
+          <li class="check"><span class="box">&check;</span><span class="label"><b>氏名</b>（EN/JP）／<b>所在都道府県</b>／<b>陶歴</b>／<b>作風</b>（2〜3文）</span></li>
+          <li class="check"><span class="box">&check;</span><span class="label">工房名（※内部管理のみ・サイトには非公開）</span></li>
+          <li class="check"><span class="box">&check;</span><span class="label">作家／作品の写真（任意）</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="sub-title"><span class="ltr">E</span>Live Studio（2店舗）</div>
+        <ul class="checks">
+          <li class="check"><span class="box">&check;</span><span class="label">店名／写真（複数）／Instagram URL／所在地（Google マップ用住所）／紹介文（EN/JP）</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="sub-title"><span class="ltr">F</span>テキスト／コピー</div>
+        <ul class="checks">
+          <li class="check"><span class="box">&check;</span><span class="label"><b>各ページの英文コピー（御社作成・最終 FIX）</b>　※別添「コピーレビュー表」で管理</span></li>
+          <li class="check"><span class="box">&check;</span><span class="label">ブランドストーリー／フィロソフィ／4つのピラー</span></li>
+          <li class="check"><span class="box">&check;</span><span class="label">ディスクレーマー（英文）／ FAQ（Q&amp;A ドラフト）</span></li>
+          <li class="check"><span class="box">&check;</span><span class="label">必要に応じてポリシー類（配送・返品 など）</span></li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <div class="sub-title"><span class="ltr">G</span>アカウント／技術<span class="tag warn">重要</span></div>
+        <ul class="checks">
+          <li class="check"><span class="box">&check;</span><span class="label">Shopify ストアへ <b>「コラボレーター（または スタッフ）」として招待</b>　※パスワードの共有は不要です</span></li>
+          <li class="check"><span class="box">&check;</span><span class="label">独自ドメイン（取得済）：DNS 設定の権限、または設定代行のための情報</span></li>
+          <li class="check"><span class="box">&check;</span><span class="label"><b>Shopify Payments の有効化</b>（本人確認・事業者情報の登録は御社側のお手続き）</span></li>
+          <li class="check"><span class="box">&check;</span><span class="label">Instagram 埋め込み・Google Maps 表示の可否</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="part" id="part2">
+      <div class="part-head"><span class="part-no">02</span><span class="part-title">制作の進め方（作業順序・内部）</span></div>
+      <div class="card">
+        <div class="phase">フェーズ0：セットアップ（着手直後）</div>
+        <ul class="steps">
+          <li>Shopify プラン確認、テーマ選定（Prestige／Impulse／Symmetry 等）→ 開発用に複製</li>
+          <li>Markets 設定：英語＝主言語／日本語＝副、マーケット（タイ THB／日本 JPY／国際 USD）、通貨セレクタ</li>
+          <li>メタフィールド設計（作家・産地・技法・季節）／メタオブジェクト定義（Live Studio 店舗）</li>
+          <li>カテゴリ・タグ設計、Search &amp; Discovery のフィルタ（季節／器種／素材／サイズ）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="phase">フェーズ1：主要構築（〜約2週）</div>
+        <ul class="steps">
+          <li>デザインシステム適用（確定カラー／タイポ／通常・ホリデー2テーマ）</li>
+          <li>主要ページ：Home／Collection／Product／Artists／Journal／For Professionals／About／Contact／FAQ</li>
+          <li>購入／問い合わせの出し分け（一点もの・在庫連動 Sold Out）、B2B 導線＋ラインシート（PDF）テンプレート</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="phase">フェーズ2：機能・登録（＋約1週）</div>
+        <ul class="steps">
+          <li>Live Studio（メタオブジェクト＋初期2店舗）</li>
+          <li>言語／通貨／決済設定（Shopify Payments＋対面ドラフト注文の運用）</li>
+          <li>季節テーマ切替機能、商品登録20点＋メタフィールド入力</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="phase">フェーズ3：仕上げ・公開（最終週）</div>
+        <ul class="steps">
+          <li>テスト（多言語・通貨・決済・レスポンシブ・各種フォーム）</li>
+          <li>SEO 初期設定、引き継ぎマニュアル（英日）の作成・お渡し</li>
+          <li>公開（目標 6/20・初期20点）</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="phase">公開後</div>
+        <ul class="steps">
+          <li>6月：追加10点を撮影上がり次第、順次掲載</li>
+          <li>微調整・軽微サポート（運用代行・継続制作は Phase 2）</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="part" id="part3">
+      <div class="part-head"><span class="part-no">03</span><span class="part-title">英文コピー管理（別添 Excel）</span></div>
+      <div class="card note">
+        <p><span class="hex">tmz_copy_review.xlsx</span> の「Copy review」シートで、ページ・要素ごとに <b>日本語（参考）／英訳案（下訳）／最終 FIX／ステータス</b> を一行ずつ管理します。</p>
+        <ul class="steps">
+          <li><b>区分</b>：「ブランド（御社作成・正）」＝タグライン・フィロソフィ・作家の作風・Live Studio 紹介文など、ニュアンスが核となる部分。「機能（当方下訳→御社承認）」＝ナビ・ボタン・フォーム・FAQ など</li>
+          <li>機能コピーで AI 下訳を用いる場合も、人手で精査し、<b>御社の最終 FIX を経てから公開</b>します</li>
+          <li>「Progress」シートでステータス別の件数を自動集計します</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="f-brand">Japanese craft. Asia&rsquo;s finest tables.</span>
+    <span class="f-meta">AKAME · https://akamedev.site/</span>
+  </footer>
+
+<script>
+  (function(){
+    var checks=[].slice.call(document.querySelectorAll('#part1 .check'));
+    var doneEl=document.getElementById('done'), totalEl=document.getElementById('total');
+    totalEl.textContent=checks.length;
+    function refresh(){doneEl.textContent=document.querySelectorAll('#part1 .check.done').length;}
+    checks.forEach(function(c,i){
+      c.querySelector('.box').innerHTML='<svg viewBox="0 0 24 24" fill="none" stroke="#F1E9DA" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg>';
+      c.style.animationDelay=(i*0.02)+'s';
+      c.setAttribute('role','checkbox');c.setAttribute('aria-checked','false');c.setAttribute('tabindex','0');
+      function toggle(){c.classList.toggle('done');c.setAttribute('aria-checked',c.classList.contains('done'));refresh();}
+      c.addEventListener('click',toggle);
+      c.addEventListener('keydown',function(e){if(e.key===' '||e.key==='Enter'){e.preventDefault();toggle();}});
+    });
+    refresh();
+  })();
+</script>
+</body>
+</html>
